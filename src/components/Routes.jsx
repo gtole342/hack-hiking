@@ -15,9 +15,7 @@ const Routes = (props) => {
             <Route exact path='/' render={
                 () => <Home />
             } />
-            <Route path='/results' render={
-                () => <Results />
-            } />
+            <Route path='/results' component={Results} />
             <Route path='/about' component = {AboutText} />
             <Route path='/trail/:trailId' component={Trail} />
         </div>
