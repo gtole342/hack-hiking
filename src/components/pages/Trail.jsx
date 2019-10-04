@@ -5,11 +5,27 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
 import Map from "../../Map";
+import { makeStyles } from '@material-ui/styles'
 import { getAnimals } from "../../constants";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails, List, ListItem } from "@material-ui/core";
 
+const useStyles = makeStyles({
+  card:{
+    display: 'flex',
+    flexDirection: 'row',
+    width: '100%',
+  },
+  trailInfo: {
+    display: 'flex',
+    flexDirection: 'row',
+    width: '100%',
+  }
+})
+
 const Trail = (props) => {
+  const classes = useStyles();
+  console.log(props)
   const [results, setResults] = React.useState([]);
 
   useEffect(() => {
@@ -58,56 +74,42 @@ const Trail = (props) => {
           }
         }
       });
-      const r = [birds, amphibians, mammals, reptiles, snailsAndSlugs, insects, malacostracans, millipedes, unknown]
+      const r = {birds, amphibians, mammals, reptiles, snailsAndSlugs, insects, malacostracans, millipedes, unknown}
       setResults(r)
     })
   }, []);
   let animalElements = []
-  if (results.length > 0) {
-    console.log(results)
-    animalElements = results.map((result) => {
-      const animals = result.map((animal, i) => <ListItem key={animal.key}>{animal.species}</ListItem>)
-      return(
-        <List>
-          {animals}
-        </List>
-      )
-    })
+  if (Object.keys(results).length > 0) {
+    for (var animalClass in results) {
+    results[animalClass].map((animal) => <ListItem key={animal.key}>{animal.species}</ListItem>)
+    }
   }
   return(
     <div>
-      <img src={props.location.state.trail.imgSmallMed} 
-           alt={props.location.state.trail.name}
-      />
-      <Card>
-        <CardMedia>
-          <Map latitude={props.location.state.trail.latitude}
-              longitude={props.location.state.trail.longitude}
-          />
-        </CardMedia>
-        <CardContent>
-            <Typography>{props.location.state.trail.name}</Typography>
-            <Typography>Rating: {props.location.state.trail.stars}</Typography>
-            <Typography>{props.location.state.trail.length} miles</Typography>
-            <Typography>{props.location.state.trail.summary}</Typography>
-            <Typography>Ascent: {props.location.state.trail.ascent}'</Typography>
-            <Typography>Descent: {props.location.state.trail.descent}'</Typography>
-            <Typography>High: {props.location.state.trail.high}'</Typography>
-            <Typography>Low: {props.location.state.trail.low}'</Typography>
-        </CardContent>
-      </Card>
       <div>
-        <ExpansionPanel>
-          <ExpansionPanelSummary
-            expandIcon={<ExpandMoreIcon />}
-          >
-            Birds
-          </ExpansionPanelSummary>
-          <ExpansionPanelDetails>
-              {animalElements[2]}
-          </ExpansionPanelDetails>
-        </ExpansionPanel>
+        <img src={props.location.state.trail.imgSmallMed} 
+                alt={props.location.state.trail.name}
+        />
+        <div>
+          <Typography variant="h4">{props.location.state.trail.name}</Typography>
+          <Typography>Rating: {props.location.state.trail.stars}</Typography>
+          <Typography>{props.location.state.trail.summary}</Typography>
+        </div>
       </div>
+      <div>
+        <div>
+          <Typography>Trail Details</Typography>
+          <Typography>{props.location.state.trail.length} miles</Typography>
+          <Typography>Ascent: {props.location.state.trail.ascent}'</Typography>
+          <Typography>Descent: {props.location.state.trail.descent}'</Typography>
+          <Typography>High: {props.location.state.trail.high}'</Typography>
+          <Typography>Low: {props.location.state.trail.low}'</Typography>
+        </div>
+        <div>
+
+        </div>
+      </div>
+      <div></div>
     </div>
   );
 };

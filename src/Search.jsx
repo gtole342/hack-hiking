@@ -21,9 +21,9 @@ const Search = () => {
   })
 
   const onSelected = (viewport, item) => {
-    setState({viewport});
     axios.get(getTrails(item.center[1], item.center[0]))
     .then((response) => {
+      console.log(response.data.trails)
       setState({
         results: response.data.trails,
         toResults: true,
@@ -32,6 +32,7 @@ const Search = () => {
   }
 
   if (state.toResults === true) {
+    console.log(state)
     return (
       <Redirect 
         to={{
