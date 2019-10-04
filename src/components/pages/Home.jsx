@@ -3,6 +3,7 @@ import Grid from '@material-ui/core/Grid'
 import InputBase from '@material-ui/core/InputBase';
 import { makeStyles } from '@material-ui/core/styles';
 import SearchIcon from '@material-ui/icons/Search';
+import Search from '../../Search';
 
 const useStyles = makeStyles({
     AppBar: {
@@ -57,19 +58,7 @@ const Home = () => {
                 <div>
                     <p className="searchHeading">Are you ready to explore?</p>
                 </div>
-                <div className={classes.search}>
-                    <div className={classes.searchIcon}>
-                    <SearchIcon />
-                    </div>
-                    <InputBase
-                    placeholder="Search…"
-                    classes={{
-                        root: classes.inputRoot,
-                        input: classes.inputInput,
-                    }}
-                    inputProps={{ 'aria-label': 'search' }}
-                    />
-                </div>
+                <Search />
             </Grid>
             <h1 className="homeDemoTitle">Discovery a nearby trail</h1>
             <Grid container direction="row" justify="center" alignItems="stretch" >

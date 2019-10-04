@@ -2,7 +2,6 @@ import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import InputBase from '@material-ui/core/InputBase';
 import { makeStyles } from '@material-ui/core/styles';
 import SearchIcon from '@material-ui/icons/Search';
 import { Link } from 'react-router-dom';
@@ -66,21 +65,15 @@ export default function SearchAppBar() {
             <Grid container direction="row" justify="center" alignItems="stretch"> 
                 <div className={classes.homeRoute}>
                     <Typography className={classes.title} variant="h6" noWrap>
-                        <Link className={classes.link} to="/">TrailYa</Link>
+                        <Link className={classes.link} to="/">
+                          <img src="./trail_ya.png"
+                               alt="trailYa logo"
+                               height="40px"
+                          />
+                        </Link>
                     </Typography>
                 </div>
-                <div className={classes.search}>
-                    <div className={classes.searchIcon}>
-                    <SearchIcon />
-                    </div>
-                    <Search
-                      classes={{
-                        root: classes.inputRoot,
-                        input: classes.inputInput,
-                      }}
-                      placeholder="Search…"
-                    />
-                </div>
+                <Search />
                 <div className={classes.homeRoute}>
                     <Typography className={classes.title} variant="h6" noWrap>
                         <Link className={classes.link} to="/about">About Us</Link>
