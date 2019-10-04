@@ -2,21 +2,70 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
+h1 {
+  text-align: center;
+  color: #43304C;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.homeDemoHike {
   color: white;
+  margin-left: 5px;
+  margin-right: 5px;
+  text-align: center;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  background-image: url('https://cdn-files.apstatic.com/hike/7010203_smallMed_1554398018.jpg');
 }
 
-.App-link {
-  color: #09d3ac;
+.demoText {
+  padding-top: 40px;
+}
+
+.main {
+  background-image: url('animal-brown-daylight-1571117.jpg');
+  background-size: cover;
+  background-blend-mode: soft-light;
+  height: 75vh;
+}
+
+.searchHeading {
+  font-size: 48px;
+  color: #43304C;
+  padding-top: 300px;
+  padding-left: 40px;
+}
+
+main {
+  padding-bottom: 20px;
+}
+
+nav {
+  background-color: white;
+  color: #91A250;
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  text-align: center;
+}
+
+li {
+  display: inline;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.resultsDiv {
+  border: #91A250;
+  border-style: solid;
+  border-width: 5px;
+}
+
+.resultsImage {
+  padding-right: 20px;
 }
