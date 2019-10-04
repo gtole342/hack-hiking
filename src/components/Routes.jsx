@@ -16,7 +16,7 @@ const Routes = (props) => {
                 () => <Home />
             } />
             <Route path='/results' component={Results} />
-            <Route path='/oneresult component={OneResult} />
+            <Route path='/oneresult' component={OneResult} />
             <Route path='/about' component = {AboutText} />
             <Route path='/trail/:trailId' component={Trail} />
         </div>
