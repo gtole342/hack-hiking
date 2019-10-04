@@ -1,0 +1,52 @@
+    <div>
+      <Card className={classes.card}>
+        <CardMedia>
+          <img src={props.location.state.trail.imgSmallMed} 
+              alt={props.location.state.trail.name}
+          />
+        </CardMedia>
+        <CardContent>
+          <Typography variant="h4">{props.location.state.trail.name}</Typography>
+          <Typography>Rating: {props.location.state.trail.stars}</Typography>
+          <Typography>{props.location.state.trail.summary}</Typography>
+        </CardContent>
+      </Card>
+      <div className={classes.trailInfo}>
+        <div>
+         <Typography>Trail Details</Typography>
+          <Typography>{props.location.state.trail.length} miles</Typography>
+          <Typography>Ascent: {props.location.state.trail.ascent}'</Typography>
+          <Typography>Descent: {props.location.state.trail.descent}'</Typography>
+          <Typography>High: {props.location.state.trail.high}'</Typography>
+          <Typography>Low: {props.location.state.trail.low}'</Typography>
+        </div>
+        <div>
+          <ExpansionPanel>
+            <ExpansionPanelSummary
+              expandIcon={<ExpandMoreIcon />}
+            >
+              Birds
+            </ExpansionPanelSummary>
+            <ExpansionPanelDetails>
+                {animalElements[2]}
+            </ExpansionPanelDetails>
+          </ExpansionPanel>
+        </div>
+      </div>
+      <Map latitude={props.location.state.trail.latitude}
+          longitude={props.location.state.trail.longitude}
+      />
+    </div>
+
+
+
+
+
+        animalElements = results.map((result) => {
+      const animals = result.map((animal, i) => <ListItem key={animal.key}>{animal.species}</ListItem>)
+      return(
+        <List>
+          {animals}
+        </List>
+      )
+    })
