@@ -8,6 +8,8 @@ import SearchIcon from '@material-ui/icons/Search';
 import { Link } from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
 
+import Search from '../Search';
+
 const useStyles = makeStyles({
   AppBar: {
       backgroundColor: 'white',
@@ -69,13 +71,12 @@ export default function SearchAppBar() {
                     <div className={classes.searchIcon}>
                     <SearchIcon />
                     </div>
-                    <InputBase
-                    placeholder="Search…"
-                    classes={{
+                    <Search
+                      classes={{
                         root: classes.inputRoot,
                         input: classes.inputInput,
-                    }}
-                    inputProps={{ 'aria-label': 'search' }}
+                      }}
+                      placeholder="Search…"
                     />
                 </div>
                 <div className={classes.homeRoute}>

@@ -4,8 +4,8 @@ import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
-import Map from "./Map";
-import { getAnimals } from "./constants";
+import Map from "../../Map";
+import { getAnimals } from "../../constants";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails, List, ListItem } from "@material-ui/core";
 
@@ -13,7 +13,6 @@ const Trail = (props) => {
   const [results, setResults] = React.useState([]);
 
   useEffect(() => {
-    console.log(props)
     console.log(getAnimals(props.location.state.trail.latitude, props.location.state.trail.longitude))
     axios.get(getAnimals(props.location.state.trail.latitude, props.location.state.trail.longitude))
     .then((response) =>{
