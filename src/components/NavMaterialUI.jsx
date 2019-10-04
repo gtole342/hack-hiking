@@ -26,9 +26,6 @@ const useStyles = makeStyles({
     color: 'black',
     borderRadius: '5px',
     backgroundColor: '#91A250',
-    '&:hover': {
-      backgroundColor: 'white',
-    },
     marginLeft: 20,
     marginRight: 20,
     width: '15%',
@@ -51,6 +48,11 @@ const useStyles = makeStyles({
     padding: '5px',
     width: '100%',
     },
+  link: {
+      textDecoration: 'none',
+      fontSize: '24px',
+      padding: '50px'
+  },
   },
 );
 
@@ -64,9 +66,9 @@ export default function SearchAppBar() {
             <Grid container direction="row" justify="center" alignItems="stretch"> 
                 <div className={classes.homeRoute}>
                     <Typography className={classes.title} variant="h6" noWrap>
-                        <Link to="/">TrailYa</Link>
+                        <Link className={classes.link} to="/">TrailYa</Link>
                     </Typography>
-                </div>  
+                </div>
                 <div className={classes.search}>
                     <div className={classes.searchIcon}>
                     <SearchIcon />
@@ -81,7 +83,7 @@ export default function SearchAppBar() {
                 </div>
                 <div className={classes.homeRoute}>
                     <Typography className={classes.title} variant="h6" noWrap>
-                        <Link to="/about">About Us</Link>
+                        <Link className={classes.link} to="/about">About Us</Link>
                     </Typography>
                 </div> 
             </Grid>

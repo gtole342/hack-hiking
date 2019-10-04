@@ -17,19 +17,18 @@ const useStyles = makeStyles({
     },
     search: {
       position: 'relative',
-      color: 'black',
+      color: '#43304C',
       borderRadius: '5px',
-      paddingLeft: '50px',
-      backgroundColor: '#91A250',
+      backgroundColor: 'white',
       '&:hover': {
-        backgroundColor: 'white',
+        backgroundColor: '#91A250',
       },
-      marginLeft: 20,
+      marginLeft: 40,
       marginRight: 20,
       width: '15%',
     },
     searchIcon: {
-      color: 'black',
+      color: '#43304C',
       marginLeft: '200px',
       width: '12px',
       height: '100%',
@@ -72,7 +71,7 @@ const Home = () => {
                     />
                 </div>
             </Grid>
-            <h1>Discovery a nearby trail</h1>
+            <h1 className="homeDemoTitle">Discovery a nearby trail</h1>
             <Grid container direction="row" justify="center" alignItems="stretch" >
                 <Grid>
                     <div className="homeDemoHike">

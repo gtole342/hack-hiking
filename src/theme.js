@@ -30,7 +30,7 @@ export const useStyles = makeStyles(theme => ({
   footer: {
     padding: theme.spacing(2),
     marginTop: 'auto',
-    backgroundColor: 'lightgray',
+    backgroundColor: '#91A250',
     zIndex: theme.zIndex.drawer + 1,
   },
   paper: {
