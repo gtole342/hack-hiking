@@ -7,10 +7,14 @@ h1 {
   color: #43304C;
 }
 
+.homeDemoTitle {
+  color: #91A250;
+}
+
 .homeDemoHike {
   color: white;
-  margin-left: 5px;
-  margin-right: 5px;
+  margin-left: 15px;
+  margin-right: 15px;
   text-align: center;
   height: 200px;
   width: 200px;
