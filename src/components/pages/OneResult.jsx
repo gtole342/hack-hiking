@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid'
+import { getAnimals } from "../../constants";
+import axios from "axios";
+
 
 const useStyles = makeStyles({
     return: {
@@ -24,8 +27,9 @@ const useStyles = makeStyles({
     }
 });
 
-const OneResult = () => {
+const OneResult = (props) => {
     const classes = useStyles();
+    console.log(props);
 
     return (
         <div>
