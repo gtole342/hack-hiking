@@ -5,6 +5,7 @@ import { getTrails } from "./constants";
 import axios from "axios";
 import SearchIcon from '@material-ui/icons/Search';
 import { makeStyles } from "@material-ui/core";
+import Grid from '@material-ui/core/Grid'
 
 const mapAccess = {
   mapboxApiAccessToken: "pk.eyJ1IjoiZ3RvbGUiLCJhIjoiY2p6b2Y4cGw4MDJlYTNtbm1zc3dpd3BnciJ9.ZR0TDB4dlK-kw5DHO4qM1w",
@@ -52,13 +53,12 @@ const Search = () => {
 
   const onSelected = (viewport, item) => {
     axios.get(getTrails(item.center[1], item.center[0]))
-      .then((response) => {
-        console.log(response.data.trails)
-        setState({
-          results: response.data.trails,
-          toResults: true,
-        })
+    .then((response) => {
+      setState({
+        results: response.data.trails,
+        toResults: true,
       })
+    })
   }
 
   if (state.toResults === true) {
