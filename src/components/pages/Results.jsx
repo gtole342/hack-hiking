@@ -9,7 +9,7 @@ const Results = (props) => {
     return (
         <div>
             <Grid justify="center" alignItems="stretch">
-                <h1>Results for [enter users search phrase]:</h1>
+                <h1>Results:</h1>
                 <Grid container spacing={2}>
                     {trails}
                 </Grid>
