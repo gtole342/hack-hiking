@@ -1,12 +1,9 @@
-import React, { useEffect } from "react";
-import axios from "axios";
-import Card from "@material-ui/core/Card";
-import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
+import React from "react";
 import Typography from "@material-ui/core/Typography";
 import Map from "../../Map";
 import { makeStyles } from '@material-ui/styles'
 import Animals from '../Animals';
+import Grid from '@material-ui/core/Grid';
 
 const useStyles = makeStyles({
   card:{
@@ -46,8 +43,6 @@ const useStyles = makeStyles({
 
 const Trail = (props) => {
   const classes = useStyles();
-  console.log(props)
-  const [results, setResults] = React.useState([]);
 
   return(
     <div>
@@ -68,12 +63,27 @@ const Trail = (props) => {
                 </div>
               </Grid>
             </div>
-            <div className={classes.resultsDetails} item xs>
-                <Typography variant="h4">{props.location.state.trail.name}</Typography>
-                <Typography>Location: {props.location.state.trail.location}</Typography>
-                <Typography>Rating: {props.location.state.trail.stars}</Typography>
-                <Typography>{props.location.state.trail.summary}</Typography>
-            </div>
+            <Grid item>
+              <div className={classes.resultsDetails} item xs>
+                  <Typography variant="h4">{props.location.state.trail.name}</Typography>
+                  <Typography>Location: {props.location.state.trail.location}</Typography>
+                  <Typography>Rating: {props.location.state.trail.stars}</Typography>
+                  <Typography>{props.location.state.trail.summary}</Typography>
+              </div>
+              <div>
+                <Animals latitude={props.location.state.trail.latitude}
+                        longitude={props.location.state.trail.longitude}
+                />
+              </div>
+            </Grid>
+      </Grid>
+      <Grid container>
+        <Grid item xs={4} />
+        <Grid item xs={8}>
+          <Map latitude={props.location.state.trail.latitude}
+                longitude={props.location.state.trail.longitude}
+          />
+        </Grid>
       </Grid>
     </div>
   );
