@@ -15,7 +15,7 @@ const Animals = (props) => {
       const amphibians = []
       const mammals = []
       const reptiles = []
-      const snailsAndSlugs = []
+      const snails = []
       const insects = []
       const malacostracans = []
       const millipedes = []
@@ -36,7 +36,7 @@ const Animals = (props) => {
             reptiles.push(result)
           }
           else if (result.classKey ===225) {
-            snailsAndSlugs.push(result)
+            snails.push(result)
           }
           else if (result.classKey ===216) {
             insects.push(result)
@@ -52,7 +52,7 @@ const Animals = (props) => {
           }
         }
       });
-      const r = {birds, amphibians, mammals, reptiles, snailsAndSlugs, insects, malacostracans, millipedes, unknown}
+      const r = {birds, amphibians, mammals, reptiles, snails, insects, malacostracans, millipedes, unknown}
       setResults(r)
     })
   }, []);
@@ -63,7 +63,7 @@ const Animals = (props) => {
       const panel = (
         <ExpansionPanel>
           <ExpansionPanelSummary>
-            {animalClass}({results[animalClass].length})
+            {animalClass.charAt(0).toUpperCase() + animalClass.slice(1)} ({results[animalClass].length})
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <List>
